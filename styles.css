@@ -1,0 +1,428 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0077cc;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #f0f8ff;
+}
+
+/* Hero section */
+.hero {
+    background-color: #0077cc;
+    /* Alterado para um tom de azul */
+    color: #f0f8ff;
+    /* Letras e botões com cores que facilitam a visualização */
+    text-align: center;
+    padding: 10rem 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 .highlight {
+    color: #8ab6d6;
+    /* Cor do destaque do nome */
+    transition: color 0.3s ease;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    color: #0077cc;
+    /* Cor do texto do botão */
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transição para cor de fundo e texto */
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #f0f8ff;
+    /* Cor de fundo ao passar o mouse */
+    color: #0077cc;
+    /* Cor do texto ao passar o mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Portfolio section */
+.portfolio {
+    padding: 5rem 0;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #0077cc;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.project {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* Para posicionamento relativo */
+}
+
+.project h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #0077cc;
+}
+
+.project p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.project-screenshot {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    /* Espaço entre o texto e a imagem */
+}
+
+/* About section */
+.about {
+    padding: 5rem 0;
+    background-color: #0077cc;
+    color: #f0f8ff;
+    /* Cor do texto na seção "Sobre Mim" */
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* Transição de transformação */
+}
+
+.profile img:hover {
+    transform: scale(1.1);
+    /* Efeito de escala ao passar o mouse */
+}
+
+.bio {
+    max-width: 600px;
+    text-align: left;
+}
+
+.bio p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Contact section */
+.contact {
+    padding: 5rem 0;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #0077cc;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+form button {
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #0077cc;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #005faa;
+}
+
+/* Estilos adicionais para o feedback */
+.hidden {
+    display: none;
+    color: #0077cc;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #0077cc;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0077cc;
+}
+
+/* Efeitos e animações adicionais */
+.hero-content h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Sombra suave no texto */
+}
+
+.highlight {
+    color: #8ab6d6;
+    /* Cor cinza azulado para o destaque do nome */
+    transition: color 0.3s ease;
+    /* Transição suave de cor */
+}
+
+.project {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Adicionado para esconder conteúdo que excederá a altura */
+    height: 100%; /* Garante que os cards ocupem a mesma altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui espaço verticalmente */
+}
+
+.project h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #0077cc;
+}
+
+.project p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+    flex: 1; /* Ocupa o espaço restante dentro do card */
+}
+
+.project-screenshot {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    /* Espaço entre o texto e a imagem */
+}
+
+.project-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para os botões */
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.project:hover .project-buttons {
+    transform: translateY(0);
+}
+
+.project-buttons a {
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.project-buttons a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-icons {
+    margin-top: 1rem;
+}
+
+.project-icons i {
+    font-size: 2rem; /* Tamanho do ícone */
+    color: #61dafb; /* Cor do ícone React */
+    margin-right: 0.5rem; /* Espaço entre ícones, se houver mais de um */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch; /* Garante que os cards ocupem a mesma altura */
+}
+
+
+.social-icon {
+    transition: color 0.3s ease;
+    /* Transição suave de cor */
+}
+
+.social-icon:hover {
+    color: #8ab6d6;
+    /* Cor cinza azulado ao passar o mouse */
+}
+
+.profile img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave na imagem */
+}
+
+/* Animação de escala suave */
+.bio p {
+    transition: transform 0.3s ease;
+}
+
+.bio p:hover {
+    transform: scale(1.05);
+    /* Efeito de escala ao passar o mouse */
+}

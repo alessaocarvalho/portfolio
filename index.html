@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <!-- Google Fonts para estilos de texto -->
+</head>
+
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Olá, eu sou o <span class="highlight">Alisson</span></h1>
+            <p>Gostaria de conhecer meus projetos?</p>
+            <a href="#portfolio" class="btn">Sim, me leve até lá!</a>
+        </div>
+    </header>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Meus Projetos</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <h3>Home Office Organizer</h3>
+                    <p>Um organizador de home office desenvolvido para a empresa Onimusic, permitindo aos gestores
+                        marcar e gerenciar os dias de trabalho remoto dos colaboradores.</p>
+                    <img src="./assets/img/project-01.png" alt="Tela principal do Home Office Organizer"
+                        class="project-screenshot">
+                    <div class="project-buttons">
+                        <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/tree/main/codigo-fonte/frontend"
+                            class="btn-code" target="_blank">Código Fonte</a>
+                        <a href="https://pmv-ads-2024-1-e5-proj-homeoffice-7ycx.onrender.com/home" class="btn-demo" target="_blank">Ver Projeto</a>
+                    </div>
+                    <div class="project-icons">
+                        <i class="fab fa-react"></i> <!-- Ícone do React -->
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <div class="profile">
+                    <img src="./assets/img/profile-pic.png" alt="Minha Foto">
+                </div>
+                <div class="bio">
+                    <p>Sou um desenvolvedor front-end altamente motivado e apaixonado pela criação de interfaces de
+                        usuário excepcionais e intuitivas. Sou apaixonado por aprender novas tecnologias e aplicá-las de
+                        forma eficaz para resolver problemas complexos.</p>
+                    <p>Tenho grande interesse em novas tecnologias e constantemente me atualizo através de vídeos,
+                        leitura de documentações, livros e artigos relacionados. Estou sempre em busca de aprender e
+                        evoluir na área.</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://github.com/alessaocarvalho" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com/alessaocarvalho/" class="social-icon"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/alissoncarv4lho/" class="social-icon"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/alissoncarv4lho" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contato</h2>
+            <form id="contact-form" action="enviar_email.php" method="POST">
+                <input type="text" id="name" name="name" placeholder="Seu Nome" required>
+                <input type="email" id="email" name="email" placeholder="Seu Email" required>
+                <textarea id="message" name="message" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit" id="submit-btn">Enviar</button>
+                <p id="form-feedback" class="hidden">Mensagem enviada com sucesso!</p>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Alisson A. Carvalho</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
