@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Script para animação de scroll suave
+    // Smooth scroll script
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -13,11 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Script para envio do formulário de contato
+    // Contact form submission handling
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
 
-        // Enviar o formulário para o Formspree
         fetch('https://formspree.io/f/xqazzroz', {
             method: 'POST',
             headers: {
@@ -29,15 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error('Houve um problema ao enviar o formulário.');
             }
-            document.getElementById('form-feedback').classList.remove('hidden');
-            // Limpa os campos do formulário após o envio
+            const feedback = document.getElementById('form-feedback');
+            feedback.textContent = 'Mensagem enviada com sucesso!';
+            feedback.classList.add('visible');
+
             document.getElementById('name').value = '';
             document.getElementById('email').value = '';
             document.getElementById('message').value = '';
 
-            // Oculta a mensagem de feedback após 3 segundos
             setTimeout(function () {
-                document.getElementById('form-feedback').classList.add('hidden');
+                feedback.classList.remove('visible');
             }, 3000);
         })
         .catch(error => {
