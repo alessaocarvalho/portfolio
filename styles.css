@@ -1,11 +1,9 @@
-/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos gerais */
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f0f0f0;
@@ -19,44 +17,6 @@ body {
     padding: 2rem;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #0077cc;
-    color: #fff;
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.social-icons {
-    display: flex;
-}
-
-.social-icon {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-    color: #f0f8ff;
-}
-
-/* Hero section */
 .hero {
     background-color: #0077cc;
     color: #f0f8ff;
@@ -111,7 +71,6 @@ body {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Portfolio section */
 .portfolio {
     padding: 5rem 0;
     background-color: #f0f8ff;
@@ -130,7 +89,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 
 .project {
@@ -208,15 +167,6 @@ body {
     margin-right: 0.5rem;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    justify-content: center;
-    align-items: stretch;
-}
-
-/* About section */
 .about {
     padding: 5rem 0;
     background-color: #0077cc;
@@ -266,7 +216,22 @@ body {
     transform: scale(1.05);
 }
 
-/* Contact section */
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #0077cc;
+}
+
 .contact {
     padding: 5rem 0;
     background-color: #f0f8ff;
@@ -317,7 +282,17 @@ form button:hover {
     background-color: #005faa;
 }
 
-/* Feedback message */
+.footer {
+    background-color: #0077cc;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
 #form-feedback {
     background-color: #005faa;
     color: #f0f8ff;
@@ -335,35 +310,6 @@ form button:hover {
     transform: translateY(0);
 }
 
-/* Footer */
-.footer {
-    background-color: #0077cc;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 0;
-}
-
-.footer p {
-    margin-bottom: 1rem;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-}
-
-.social-icon {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-    color: #0077cc;
-}
-
-/* Smooth scroll */
 html {
     scroll-behavior: smooth;
 }
