@@ -326,6 +326,24 @@ body {
     transition: transform 0.3s ease;
 }
 
+@media (max-width: 600px) {
+    .services-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .services-table th,
+    .services-table td {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .services-table td:hover {
+        transform: none;
+    }
+}
+
 .contact {
     padding: 5rem 0;
     background-color: #f0f8ff;
