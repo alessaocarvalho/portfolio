@@ -31,18 +31,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error('Houve um problema ao enviar o formulário.');
             }
-            const feedback = document.getElementById('submit-btn-msg');
-            if (feedback) {
-                feedback.style.display = 'inline'; // Exibe a mensagem de sucesso
-                feedback.textContent = 'Mensagem enviada com sucesso!'; // Define o texto da mensagem
+            // Utiliza SweetAlert2 para mostrar mensagem de sucesso
+            Swal.fire({
+                icon: 'success',
+                title: 'Mensagem enviada com sucesso!',
+                showConfirmButton: false,
+                timer: 3000
+            });
 
-                setTimeout(function () {
-                    feedback.style.display = 'none'; // Oculta novamente a mensagem
-                    submitBtn.removeAttribute('disabled'); // Habilita o botão novamente
-                }, 3000);
-            } else {
-                console.error('Elemento #submit-btn-msg não encontrado.');
-            }
+            submitBtn.removeAttribute('disabled'); // Habilita o botão novamente
+            this.reset(); // Limpa o formulário após o envio
         })
         .catch(error => {
             console.error('Erro:', error);
