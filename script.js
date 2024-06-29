@@ -32,19 +32,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error('Houve um problema ao enviar o formulário.');
             }
             const feedback = document.getElementById('form-feedback');
-            feedback.textContent = 'Mensagem enviada com sucesso!';
-            feedback.classList.add('visible');
+            if (feedback) {
+                feedback.textContent = 'Mensagem enviada com sucesso!';
+                feedback.classList.add('visible');
 
-            // Substitui o botão pelo feedback de sucesso
-            submitBtn.style.display = 'none'; // Oculta o botão de envio
-            document.getElementById('submit-btn-msg').style.display = 'inline'; // Mostra a mensagem de sucesso
+                // Substitui o botão pelo feedback de sucesso
+                submitBtn.style.display = 'none'; // Oculta o botão de envio
+                document.getElementById('submit-btn-msg').style.display = 'inline'; // Mostra a mensagem de sucesso
 
-            setTimeout(function () {
-                feedback.classList.remove('visible');
-                submitBtn.style.display = 'inline'; // Restaura o botão após alguns segundos
-                document.getElementById('submit-btn-msg').style.display = 'none'; // Oculta novamente a mensagem
-                submitBtn.removeAttribute('disabled'); // Habilita o botão novamente
-            }, 3000);
+                setTimeout(function () {
+                    feedback.classList.remove('visible');
+                    submitBtn.style.display = 'inline'; // Restaura o botão após alguns segundos
+                    document.getElementById('submit-btn-msg').style.display = 'none'; // Oculta novamente a mensagem
+                    submitBtn.removeAttribute('disabled'); // Habilita o botão novamente
+                }, 3000);
+            } else {
+                console.error('Elemento #form-feedback não encontrado.');
+            }
         })
         .catch(error => {
             console.error('Erro:', error);
