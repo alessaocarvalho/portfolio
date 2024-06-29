@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
 
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.setAttribute('disabled', 'true'); // Desabilita o botão durante o envio
+
         fetch('https://formspree.io/f/xqazzroz', {
             method: 'POST',
             headers: {
@@ -32,17 +35,21 @@ document.addEventListener('DOMContentLoaded', function() {
             feedback.textContent = 'Mensagem enviada com sucesso!';
             feedback.classList.add('visible');
 
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
+            // Substitui o botão pelo feedback de sucesso
+            submitBtn.style.display = 'none'; // Oculta o botão de envio
+            document.getElementById('submit-btn-msg').style.display = 'inline'; // Mostra a mensagem de sucesso
 
             setTimeout(function () {
                 feedback.classList.remove('visible');
+                submitBtn.style.display = 'inline'; // Restaura o botão após alguns segundos
+                document.getElementById('submit-btn-msg').style.display = 'none'; // Oculta novamente a mensagem
+                submitBtn.removeAttribute('disabled'); // Habilita o botão novamente
             }, 3000);
         })
         .catch(error => {
             console.error('Erro:', error);
             alert('Houve um erro ao enviar o email. Por favor, tente novamente.');
+            submitBtn.removeAttribute('disabled'); // Garante que o botão seja reabilitado em caso de erro
         });
     });
 });
