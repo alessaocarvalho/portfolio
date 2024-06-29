@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <!-- SEO - Metadados -->
+    <meta name="description"
+        content="Portfólio de Alisson Carvalho, desenvolvedor front-end focado em criar interfaces excepcionais e intuitivas. Conheça meus projetos e serviços.">
 </head>
 
 <body>
@@ -24,6 +27,7 @@
         <div class="container">
             <h2>Meus Projetos</h2>
             <div class="projects-grid">
+                <!-- Exemplo de projeto -->
                 <div class="project">
                     <h3>Home Office Organizer</h3>
                     <p>Um organizador de home office desenvolvido para a empresa Onimusic, permitindo aos gestores
@@ -40,7 +44,9 @@
                         <i class="fab fa-react"></i>
                     </div>
                 </div>
+                <!-- Outros projetos aqui -->
             </div>
+        </div>
     </section>
 
     <section id="about" class="about">
@@ -72,6 +78,59 @@
         </div>
     </section>
 
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Habilidades</h2>
+            <div class="skills-list">
+                <ul>
+                    <li><i class="fab fa-html5"></i> HTML5</li>
+                    <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                    <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                    <li><i class="fab fa-js"></i> JavaScript (ES6+)</li>
+                    <li><i class="fab fa-node-js"></i> Node.js</li>
+                    <li><i class="fab fa-react"></i> React.js</li>
+                    <li><i class="fas fa-object-ungroup"></i>UI/UX Design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Serviços</h2>
+            <table class="services-table">
+                <tr>
+                    <th>Serviço</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td>Desenvolvimento de Página Web Estática</td>
+                    <td>Criação de um site simples com até 5 páginas (ex.: Página Inicial, Sobre Nós, Serviços, Contato, etc.). Ideal para empresas ou profissionais que precisam de uma presença básica na internet.</td>
+                </tr>
+                <tr>
+                    <td>Desenvolvimento de Página Web Estática com Back-end</td>
+                    <td>Criação de um site simples com funcionalidades extras como sistemas de login, formulários de contato que enviam mensagens, etc. Indicado para quem precisa de interações mais avançadas no site.</td>
+                </tr>
+                <tr>
+                    <td>Registro e Configuração de Domínio</td>
+                    <td>Faço todo o processo de registro e configuração do domínio (nome do site, como www.suaempresa.com), se disponível.</td>
+                </tr>
+                <tr>
+                    <td>Desenvolvimento de Aplicação Mobile</td>
+                    <td>Criação de um aplicativo para celulares com funcionalidades personalizadas, como um app de agenda, pedidos online, etc.</td>
+                </tr>
+                <tr>
+                    <td>Redesign de Site</td>
+                    <td>Atualização do design de um site já existente, melhorando sua aparência e funcionalidade, mas mantendo a estrutura básica do site.</td>
+                </tr>
+                <tr>
+                    <td>Manutenção de Site</td>
+                    <td>Serviço periódico de manutenção do site, que inclui atualizações de conteúdo (como adicionar novas informações) e correção de problemas.</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <div class="container">
             <h2>Contato</h2>
@@ -80,7 +139,8 @@
                 <input type="email" id="email" name="email" placeholder="Seu Email" required>
                 <textarea id="message" name="message" placeholder="Sua Mensagem" required></textarea>
                 <button type="submit" id="submit-btn">Enviar</button>
-
+                <!-- Feedback do formulário -->
+                <div id="form-feedback"></div>
             </form>
         </div>
     </section>
@@ -90,9 +150,3 @@
             <p>&copy; 2024 Alisson A. Carvalho</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
-
-</html>

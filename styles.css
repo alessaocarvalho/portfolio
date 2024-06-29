@@ -232,6 +232,100 @@ body {
     transform: scale(1.5);
 }
 
+.skills {
+    padding: 5rem 0;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #0077cc;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.skills-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.skills-list ul li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    width: calc(50% - 0.5rem);
+    padding: 0.5rem;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.skills-list ul li i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: #0077cc;
+}
+
+.skills-list ul li:hover {
+    transform: scale(1.05);
+}
+
+.services {
+    padding: 5rem 0;
+    background-color: #0077cc;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f0f8ff;
+    margin-bottom: 2rem;
+}
+
+.services-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-collapse: collapse;
+    border-radius: 8px;
+}
+
+.services-table th,
+.services-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.2rem;
+}
+
+.services-table th {
+    background-color: #8ab6d6;
+    font-weight: 700;
+}
+
+.services-table td:first-child {
+    font-weight: 700;
+}
+
+.services-table td:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
 .contact {
     padding: 5rem 0;
     background-color: #f0f8ff;
@@ -265,13 +359,11 @@ form textarea {
 }
 
 form button {
-    display: block;
-    width: 100%;
+    display: inline-block;
     padding: 1rem 2rem;
     background-color: #0077cc;
     color: #fff;
     font-size: 1.2rem;
-    font-family: 'Montserrat', sans-serif;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -279,37 +371,41 @@ form button {
 }
 
 form button:hover {
-    background-color: #005faa;
+    background-color: #005fa3;
 }
 
-.footer {
-    background-color: #0077cc;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 0;
-}
-
-.footer p {
-    margin-bottom: 1rem;
-}
-
-#form-feedback {
-    background-color: #005faa;
-    color: #f0f8ff;
-    padding: 1rem;
-    border-radius: 4px;
+.form-message {
     font-size: 1.2rem;
     margin-top: 1rem;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: translateY(-10px);
 }
 
-#form-feedback.visible {
-    opacity: 1;
-    transform: translateY(0);
+.form-success {
+    color: #4caf50;
 }
 
-html {
-    scroll-behavior: smooth;
+.form-error {
+    color: #f44336;
+}
+
+/* Estilos do rodapé */
+footer {
+    padding: 2rem 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: #8ab6d6;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #61dafb;
 }
