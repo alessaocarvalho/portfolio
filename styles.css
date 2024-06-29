@@ -225,11 +225,11 @@ body {
     color: #fff;
     font-size: 1.5rem;
     margin: 0 10px;
-    transition: color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .social-icon:hover {
-    color: #0077cc;
+    transform: scale(1.5);
 }
 
 .contact {
