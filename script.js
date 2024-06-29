@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Script carregado!'); // Verifique se o script está sendo carregado
-
     // Smooth scroll script
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form submission handling
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
-        console.log('Formulário enviado!'); // Verifique se o evento de envio está sendo capturado
 
         const submitBtn = document.getElementById('submit-btn');
         submitBtn.setAttribute('disabled', 'true'); // Desabilita o botão durante o envio
@@ -37,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const feedback = document.getElementById('submit-btn-msg');
             if (feedback) {
                 feedback.style.display = 'inline'; // Exibe a mensagem de sucesso
+                feedback.textContent = 'Mensagem enviada com sucesso!'; // Define o texto da mensagem
 
                 setTimeout(function () {
                     feedback.style.display = 'none'; // Oculta novamente a mensagem
