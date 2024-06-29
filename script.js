@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script carregado!'); // Verifique se o script está sendo carregado
+
     // Smooth scroll script
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form submission handling
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
+        console.log('Formulário enviado!'); // Verifique se o evento de envio está sendo capturado
 
         const submitBtn = document.getElementById('submit-btn');
         submitBtn.setAttribute('disabled', 'true'); // Desabilita o botão durante o envio
@@ -31,23 +34,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!response.ok) {
                 throw new Error('Houve um problema ao enviar o formulário.');
             }
-            const feedback = document.getElementById('form-feedback');
+            const feedback = document.getElementById('submit-btn-msg');
             if (feedback) {
-                feedback.textContent = 'Mensagem enviada com sucesso!';
-                feedback.classList.add('visible');
-
-                // Substitui o botão pelo feedback de sucesso
-                submitBtn.style.display = 'none'; // Oculta o botão de envio
-                document.getElementById('submit-btn-msg').style.display = 'inline'; // Mostra a mensagem de sucesso
+                feedback.style.display = 'inline'; // Exibe a mensagem de sucesso
 
                 setTimeout(function () {
-                    feedback.classList.remove('visible');
-                    submitBtn.style.display = 'inline'; // Restaura o botão após alguns segundos
-                    document.getElementById('submit-btn-msg').style.display = 'none'; // Oculta novamente a mensagem
+                    feedback.style.display = 'none'; // Oculta novamente a mensagem
                     submitBtn.removeAttribute('disabled'); // Habilita o botão novamente
                 }, 3000);
             } else {
-                console.error('Elemento #form-feedback não encontrado.');
+                console.error('Elemento #submit-btn-msg não encontrado.');
             }
         })
         .catch(error => {
