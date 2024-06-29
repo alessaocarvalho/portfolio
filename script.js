@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scroll script
+document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -13,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Contact form submission handling
     document.getElementById('contact-form').addEventListener('submit', function (e) {
         e.preventDefault();
 
         const submitBtn = document.getElementById('submit-btn');
-        submitBtn.setAttribute('disabled', 'true'); // Desabilita o botão durante o envio
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
 
         fetch('https://formspree.io/f/xqazzroz', {
             method: 'POST',
@@ -26,26 +25,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Accept': 'application/json'
             },
             body: new FormData(this)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Houve um problema ao enviar o formulário.');
+        }).then(response => {
+            if (response.ok) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Mensagem enviada!',
+                    text: 'Obrigado por entrar em contato.',
+                    confirmButtonText: 'Fechar'
+                });
+                submitBtn.textContent = 'Enviado!';
+                setTimeout(() => {
+                    submitBtn.textContent = 'Enviar';
+                    submitBtn.disabled = false;
+                }, 3000);
+                this.reset();
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Houve um problema ao enviar a mensagem. Tente novamente.',
+                    confirmButtonText: 'Fechar'
+                });
+                submitBtn.textContent = 'Enviar';
+                submitBtn.disabled = false;
             }
-            // Utiliza SweetAlert2 para mostrar mensagem de sucesso
+        }).catch(error => {
             Swal.fire({
-                icon: 'success',
-                title: 'Mensagem enviada com sucesso!',
-                showConfirmButton: false,
-                timer: 3000
+                icon: 'error',
+                title: 'Erro',
+                text: 'Houve um problema ao enviar a mensagem. Tente novamente.',
+                confirmButtonText: 'Fechar'
             });
-
-            submitBtn.removeAttribute('disabled'); // Habilita o botão novamente
-            this.reset(); // Limpa o formulário após o envio
-        })
-        .catch(error => {
-            console.error('Erro:', error);
-            alert('Houve um erro ao enviar o email. Por favor, tente novamente.');
-            submitBtn.removeAttribute('disabled'); // Garante que o botão seja reabilitado em caso de erro
+            submitBtn.textContent = 'Enviar';
+            submitBtn.disabled = false;
         });
     });
+
 });
