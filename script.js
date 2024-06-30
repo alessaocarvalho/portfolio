@@ -28,42 +28,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
-
+    
+            const formData = new FormData(this);
             const submitBtn = document.getElementById('submit-btn');
+    
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
-
+    
             fetch('https://formspree.io/f/xqazzroz', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json'
                 },
-                body: new FormData(this)
-            }).then(response => {
+                body: formData
+            })
+            .then(response => {
                 if (response.ok) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Mensagem enviada!',
-                        text: 'Obrigado por entrar em contato.',
-                        confirmButtonText: 'Fechar'
-                    });
-                    submitBtn.textContent = 'Enviado!';
-                    setTimeout(() => {
-                        submitBtn.textContent = 'Enviar';
-                        submitBtn.disabled = false;
-                    }, 3000);
-                    this.reset();
+                    return response.json();
                 } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Erro',
-                        text: 'Houve um problema ao enviar a mensagem. Tente novamente.',
-                        confirmButtonText: 'Fechar'
-                    });
+                    throw new Error('Erro ao enviar mensagem');
+                }
+            })
+            .then(data => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Mensagem enviada!',
+                    text: 'Obrigado por entrar em contato.',
+                    confirmButtonText: 'Fechar'
+                });
+                submitBtn.textContent = 'Enviado!';
+                setTimeout(() => {
                     submitBtn.textContent = 'Enviar';
                     submitBtn.disabled = false;
-                }
-            }).catch(error => {
+                }, 3000);
+                this.reset();
+            })
+            .catch(error => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Erro',
