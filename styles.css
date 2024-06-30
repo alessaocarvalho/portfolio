@@ -158,12 +158,12 @@ body {
 }
 
 .project-icons {
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .project-icons i {
-    font-size: 2rem;
-    color: #61dafb;
+    font-size: 3rem;
+    color: #0077cc;
     margin-right: 0.5rem;
 }
 
