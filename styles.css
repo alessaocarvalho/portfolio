@@ -408,23 +408,6 @@ form button:hover {
     margin-bottom: 1rem;
 }
 
-#form-feedback {
-    background-color: #005faa;
-    color: #f0f8ff;
-    padding: 1rem;
-    border-radius: 4px;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: translateY(-10px);
-}
-
-#form-feedback.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 html {
     scroll-behavior: smooth;
 }
