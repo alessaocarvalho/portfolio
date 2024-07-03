@@ -412,6 +412,30 @@ form button:hover {
     background-color: #005faa;
 }
 
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: none;
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 0.8rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background-color: #005faa;
+}
+
+.back-to-top i {
+    font-size: 1.5rem;
+}
+
 .footer {
     background-color: #0077cc;
     color: #fff;
