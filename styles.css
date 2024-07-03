@@ -124,6 +124,11 @@ body {
     transition: transform 0.3s ease;
 }
 
+.project p a {
+    text-decoration: none;
+    color: #8ab6d6;
+}
+
 .project p:hover {
     transform: scale(1.05);
 }
