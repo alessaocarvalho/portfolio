@@ -28,37 +28,37 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: formData
         })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Erro ao enviar mensagem');
-            }
-        })
-        .then(data => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Mensagem enviada!',
-                text: 'Obrigado por entrar em contato.',
-                confirmButtonText: 'Fechar'
-            });
-            submitBtn.textContent = 'Enviado!';
-            setTimeout(() => {
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Erro ao enviar mensagem');
+                }
+            })
+            .then(data => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Mensagem enviada!',
+                    text: 'Obrigado por entrar em contato.',
+                    confirmButtonText: 'Fechar'
+                });
+                submitBtn.textContent = 'Enviado!';
+                setTimeout(() => {
+                    submitBtn.textContent = 'Enviar';
+                    submitBtn.disabled = false;
+                }, 3000);
+                this.reset();
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Houve um problema ao enviar a mensagem. Tente novamente.',
+                    confirmButtonText: 'Fechar'
+                });
                 submitBtn.textContent = 'Enviar';
                 submitBtn.disabled = false;
-            }, 3000);
-            this.reset();
-        })
-        .catch(error => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Erro',
-                text: 'Houve um problema ao enviar a mensagem. Tente novamente.',
-                confirmButtonText: 'Fechar'
             });
-            submitBtn.textContent = 'Enviar';
-            submitBtn.disabled = false;
-        });
     });
 
     const backToTopButton = document.getElementById('back-to-top');
