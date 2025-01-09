@@ -124,6 +124,11 @@ body {
     transition: transform 0.3s ease;
 }
 
+.project p a {
+    text-decoration: none;
+    color: #8ab6d6;
+}
+
 .project p:hover {
     transform: scale(1.05);
 }
@@ -405,6 +410,35 @@ form button {
 
 form button:hover {
     background-color: #005faa;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.back-to-top:hover {
+    background-color: #005faa;
+}
+
+.back-to-top i {
+    font-size: 1.5rem;
 }
 
 .footer {

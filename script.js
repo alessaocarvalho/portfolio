@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({
@@ -12,36 +12,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        const formData = new FormData(this);
+        const submitBtn = document.getElementById('submit-btn');
 
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-    
-            const formData = new FormData(this);
-            const submitBtn = document.getElementById('submit-btn');
-    
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-    
-            fetch('https://formspree.io/f/xqazzroz', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body: formData
-            })
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
+
+        fetch('https://formspree.io/f/xqazzroz', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json'
+            },
+            body: formData
+        })
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -73,6 +59,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 submitBtn.textContent = 'Enviar';
                 submitBtn.disabled = false;
             });
-        });
+    });
+
+    const backToTopButton = document.getElementById('back-to-top');
+    const heroSectionHeight = document.querySelector('.hero').offsetHeight;
+
+    if (window.scrollY > heroSectionHeight) {
+        backToTopButton.style.display = 'flex';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > heroSectionHeight) {
+            backToTopButton.style.display = 'flex';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
