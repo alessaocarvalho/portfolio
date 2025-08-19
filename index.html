@@ -1,187 +1,334 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Novo portfólio em construção — Volte em breve</title>
+    <style>
+      :root {
+        --bg1: #0f172a; /* slate-900 */
+        --bg2: #1e293b; /* slate-800 */
+        --accent1: #22d3ee; /* cyan-400 */
+        --accent2: #6366f1; /* indigo-500 */
+        --accent3: #f472b6; /* pink-400 */
+        --text: #e2e8f0; /* slate-200 */
+        --muted: #94a3b8; /* slate-400 */
+        --glass: rgba(2, 6, 23, 0.45);
+        --border: rgba(148, 163, 184, 0.25);
+        --shadow: rgba(0, 0, 0, 0.35);
+      }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Alisson Carvalho</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
-    <meta name="keywords"
-        content="desenvolvedor web, desenvolvedor front-end, portfólio, Alisson Carvalho, projetos web, interfaces intuitivas, portfólio web, desenvolvimento de software, design de interfaces, projetos de tecnologia, serviços web, aplicações web, aplicações front-end, HTML, CSS, JavaScript, React.js, desenvolvimento responsivo, UI/UX">
-    <meta name="author" content="Alisson Carvalho">
-    <meta name="description"
-        content="Explore o portfólio de Alisson Carvalho, um desenvolvedor web especializado em interfaces intuitivas e projetos inovadores.">
-    <meta property="og:image" content="https://alessao.com.br/assets/img/profile-pic.png">
-    <meta property="og:image:width" content="400">
-    <meta property="og:image:height" content="400">
-    <meta property="og:image:type" content="image/png">
-</head>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: var(--text);
+        background: radial-gradient(
+            1200px 800px at 10% 10%,
+            rgba(99, 102, 241, 0.15),
+            rgba(0, 0, 0, 0) 40%
+          ),
+          radial-gradient(
+            1000px 700px at 90% 90%,
+            rgba(34, 211, 238, 0.12),
+            rgba(0, 0, 0, 0) 40%
+          ),
+          linear-gradient(120deg, var(--bg1), var(--bg2));
+        overflow: hidden;
+      }
 
-<body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Olá, eu sou o <span class="highlight">Alisson</span></h1>
-            <p>Gostaria de conhecer meus projetos?</p>
-            <a href="#portfolio" class="btn">Sim, me leve até lá!</a>
+      /* Animated gradient veil */
+      .bg-veil {
+        position: fixed;
+        inset: -50% -50%;
+        background: conic-gradient(
+          from 0deg,
+          var(--accent1),
+          var(--accent2),
+          var(--accent3),
+          var(--accent2),
+          var(--accent1)
+        );
+        filter: blur(120px) saturate(120%);
+        opacity: 0.18;
+        animation: spin 24s linear infinite;
+        will-change: transform;
+        pointer-events: none;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(1turn);
+        }
+      }
+
+      .wrap {
+        position: relative;
+        min-height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+        isolation: isolate;
+      }
+
+      .card {
+        width: min(720px, 92vw);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.02)
+        );
+        backdrop-filter: blur(14px) saturate(130%);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        box-shadow: 0 20px 60px var(--shadow),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        padding: clamp(1.25rem, 3vw, 2rem);
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(2, 6, 23, 0.55);
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .icon {
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent1), var(--accent2));
+        color: #0b1020;
+        box-shadow: 0 6px 18px rgba(34, 211, 238, 0.35);
+        animation: float 3.6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      h1 {
+        margin: 0.9rem 0 0.4rem;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        background: linear-gradient(90deg, var(--text), #fff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 1px 20px rgba(255, 255, 255, 0.05);
+      }
+
+      .subtitle {
+        font-size: clamp(1rem, 2.2vw, 1.25rem);
+        color: var(--muted);
+      }
+
+      .shimmer {
+        position: relative;
+        display: inline-block;
+        background: linear-gradient(
+          110deg,
+          rgba(255, 255, 255, 0.08) 20%,
+          rgba(255, 255, 255, 0.6) 35%,
+          rgba(255, 255, 255, 0.08) 50%
+        );
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: shimmer 2.2s ease-in-out infinite;
+      }
+      @keyframes shimmer {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      .progress {
+        margin-top: 1.25rem;
+        height: 10px;
+        width: 100%;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(148, 163, 184, 0.12);
+        overflow: hidden;
+      }
+      .bar {
+        height: 100%;
+        width: 0%;
+        border-radius: inherit;
+        background: repeating-linear-gradient(
+          45deg,
+          var(--accent2) 0 14px,
+          var(--accent1) 14px 28px
+        );
+        animation: load 6s ease-in-out infinite;
+      }
+      @keyframes load {
+        0% {
+          width: 0%;
+        }
+        50% {
+          width: 72%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      .footer {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .links {
+        display: inline-flex;
+        gap: 0.75rem;
+      }
+      .link {
+        color: var(--text);
+        text-underline-offset: 4px;
+        opacity: 0.8;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      .link:hover {
+        opacity: 1;
+        transform: translateY(-1px);
+      }
+
+      /* Subtle entrance animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+        animation: in 0.8s ease forwards;
+      }
+      .reveal-2 {
+        animation-delay: 0.1s;
+      }
+      .reveal-3 {
+        animation-delay: 0.2s;
+      }
+      @keyframes in {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* Responsive tweak for very small screens */
+      @media (max-width: 360px) {
+        .chip {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-veil" aria-hidden="true"></div>
+    <main class="wrap" role="main">
+      <section class="card" aria-labelledby="titulo">
+        <div class="chip reveal" aria-live="polite">
+          <span class="icon" aria-hidden="true">🔧</span>
+          <span>Em construção</span>
         </div>
-    </header>
-
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2>Meus Projetos</h2>
-            <div class="projects-grid">
-                <div class="project">
-                    <h3>Home Office Organizer</h3>
-                    <p>Um organizador de home office desenvolvido para a empresa <a
-                            href="https://www.onimusic.com.br/">Onimusic</a>, permitindo aos gestores
-                        marcar e gerenciar os dias de trabalho remoto dos colaboradores.</p>
-                    <img src="./assets/img/project-01.png" alt="Tela principal do Home Office Organizer"
-                        class="project-screenshot">
-                    <div class="project-buttons">
-                        <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e5-proj-homeoffice-organizer-t6/tree/main/codigo-fonte/frontend/src"
-                            class="btn-code" target="_blank">Código Fonte</a>
-                        <a href="https://pmv-ads-2024-1-e5-proj-homeoffice-7ycx.onrender.com/home" class="btn-demo"
-                            target="_blank">Ver Projeto</a>
-                    </div>
-                    <div class="project-icons">
-                        <i class="fa-brands fa-react"></i>
-                    </div>
-                </div>
-                <div class="project">
-                    <h3>Site TREM Prodemge</h3>
-                    <p>Página institucional para o programa de inovação aberta da Prodemge (Companhia de Tecnologia da Informação do Estado de Minas Gerais)</p>
-                    <img src="./assets/img/project-02.png" alt="Apresentação do site TREM"
-                        class="project-screenshot">
-                    <div class="project-buttons">
-                        <a href="https://trem.prodemge.gov.br/" class="btn-demo"
-                            target="_blank">Ver Projeto</a>
-                    </div>
-                    <div class="project-icons">
-                        <i class="fab fa-html5"></i>
-                        <i class="fab fa-css3-alt"></i>
-                        <i class="fab fa-js"></i>
-                    </div>
-                </div>
-            </div>
+        <h1 id="titulo" class="reveal reveal-2">
+          Novo portfólio em construção
+        </h1>
+        <p class="subtitle reveal reveal-3">
+          <span class="shimmer">Volte em breve</span> — estamos preparando algo
+          especial.
+        </p>
+        <div
+          class="progress reveal reveal-3"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="72"
+          aria-label="Progresso de construção"
+        >
+          <div class="bar"></div>
         </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Sobre Mim</h2>
-            <div class="about-content">
-                <div class="profile">
-                    <img src="./assets/img/profile-pic.png" alt="Minha Foto">
-                </div>
-                <div class="bio">
-                    <p>Profissional em Tecnologia da Informação com graduação em Análise e Desenvolvimento de Sistemas e atualmente cursando Sistemas de Informação.</p>
-                    <p>Comprometido com o aprendizado contínuo e a aplicação de novas tecnologias para resolver problemas complexos e impulsionar inovação.</p>
-                </div>
-                <div class="social-icons">
-                    <a href="https://github.com/alessaocarvalho" class="social-icon"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a href="https://instagram.com/alessaocarvalho/" class="social-icon"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com/in/alessao/" class="social-icon"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://x.com/alissoncarv4lho" class="social-icon"><i
-                            class="fa-brands fa-x-twitter"></i></a>
-                </div>
-            </div>
+        <div
+          class="footer reveal reveal-3"
+          aria-label="Informações complementares"
+        >
+          <span>Obrigado pela visita.</span>
+          <div class="links">
+            <a
+              class="link"
+              href="#"
+              onclick="window.history.back(); return false;"
+              aria-label="Voltar"
+              >Voltar</a
+            >
+            <span>•</span>
+            <a
+              class="link"
+              href="mailto:contato@alessao.com.br"
+              aria-label="Entre em contato por e-mail"
+              >Contato</a
+            >
+          </div>
         </div>
-    </section>
+      </section>
+    </main>
 
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Habilidades</h2>
-            <div class="skills-list">
-                <ul>
-                    <li><i class="fa-brands fa-html5"></i> HTML5</li>
-                    <li><i class="fa-brands fa-css3-alt"></i> CSS3</li>
-                    <li><i class="fa-brands fa-js"></i> JavaScript</li>
-                    <li><i class="fa-brands fa-python"></i> Python</li>
-                    <li><i class="fa-brands fa-react"></i> React JS</li>
-                    <li><i class="fa fa-database"></i>Banco de Dados SQL</li>
-                    <li><i class="fa-brands fa-git-alt"></i> Git</li>
-                    <li><i class="fa-brands fa-figma"></i>Figma</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Serviços</h2>
-            <table class="services-table">
-                <tr>
-                    <th>Serviço</th>
-                    <th>Descrição</th>
-                </tr>
-                <tr>
-                    <td>Desenvolvimento de Página Web Estática</td>
-                    <td>Criação de um site simples com até 5 páginas (ex.: Página Inicial, Sobre Nós, Serviços, Contato,
-                        etc.). Ideal para empresas ou profissionais que precisam de uma presença básica na internet.
-                    </td>
-                </tr>
-                <tr>
-                    <td>Desenvolvimento de Página Web Estática com Back-end</td>
-                    <td>Criação de um site simples com funcionalidades extras como sistemas de login, formulários de
-                        contato que enviam mensagens, etc. Indicado para quem precisa de interações mais avançadas no
-                        site.</td>
-                </tr>
-                <tr>
-                    <td>Registro e Configuração de Domínio</td>
-                    <td>Todo o processo de registro e configuração do domínio (nome do site, como
-                        www.suaempresa.com), se disponível.</td>
-                </tr>
-                <tr>
-                    <td>Desenvolvimento de Aplicação Mobile</td>
-                    <td>Criação de um aplicativo para celulares com funcionalidades personalizadas, como um app de
-                        agenda, pedidos online, etc.</td>
-                </tr>
-                <tr>
-                    <td>Redesign de Site</td>
-                    <td>Atualização do design de um site já existente, melhorando sua aparência e funcionalidade, mas
-                        mantendo a estrutura básica do site.</td>
-                </tr>
-                <tr>
-                    <td>Manutenção de Site</td>
-                    <td>Serviço periódico de manutenção do site, que inclui atualizações de conteúdo (como adicionar
-                        novas informações) e correção de problemas.</td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contato</h2>
-            <form id="contact-form" action="https://formspree.io/f/xqazzroz" method="POST">
-                <input type="text" id="name" name="name" placeholder="Seu Nome" required>
-                <input type="email" id="email" name="email" placeholder="Seu Email" required>
-                <textarea id="message" name="message" placeholder="Sua Mensagem" required></textarea>
-                <button type="submit" id="submit-btn">Enviar</button>
-            </form>
-        </div>
-    </section>
-
-    <button id="back-to-top" class="back-to-top"><i class="fa fa-arrow-up"></i></button>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 • Desenvolvido por <a href="https://alessao.com.br/">Alisson Carvalho</a></p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
+    <script>
+      // Optional easter-egg: sparkle on click
+      const root = document.documentElement;
+      document.addEventListener("click", (e) => {
+        const spark = document.createElement("span");
+        spark.textContent = "✨";
+        spark.style.position = "fixed";
+        spark.style.left = e.clientX + "px";
+        spark.style.top = e.clientY + "px";
+        spark.style.pointerEvents = "none";
+        spark.style.userSelect = "none";
+        spark.style.transform = "translate(-50%, -50%) scale(0.8)";
+        spark.style.filter = "drop-shadow(0 6px 12px rgba(255,255,255,.35))";
+        spark.style.transition = "all .8s ease";
+        document.body.appendChild(spark);
+        requestAnimationFrame(() => {
+          spark.style.transform = "translate(-50%, -120%) scale(1.3)";
+          spark.style.opacity = "0";
+        });
+        setTimeout(() => spark.remove(), 900);
+      });
+    </script>
+  </body>
+</html>
